@@ -1,0 +1,55 @@
+﻿
+@model List<PizzaBoxMVCClient.Models.Order>
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Summary
+            </th>
+            <th>
+                Customer ID
+            </th>
+            <th>
+                Store Name
+            </th>
+            <th>
+                # of Pizzas
+            </th>
+            <th>
+                Order Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Summary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.userName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pizzas.Count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                <td>
+                  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

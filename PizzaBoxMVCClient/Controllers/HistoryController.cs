@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace PizzaBoxMVCClient.Controllers
 {
-  public class UserController : Controller
+  public class HistoryController : Controller
   {
     Client client = new Client();
-      
+       
+        public IActionResult Index(int id)
+        {
+            var history = client.GetHistory(id);
+            return View(history);
+        }
+
     }
 }

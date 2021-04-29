@@ -6,6 +6,16 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-<h2>List of Stores:</h2>
+
 <br />
 <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="Index">Look at Available stores</a>
+<a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Order a Pizza!</a>
+
+    <h4>Get Order History</h4>
+    <form method="get" asp-action="Index" asp-controller="History">
+       
+        <label for="UserID">UserID</label>
+        <input type="number" id="UserID" name="UserID" /><br />
+        <input type="submit" value="View Order History" />
+    </form>
+
