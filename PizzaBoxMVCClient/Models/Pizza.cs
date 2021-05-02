@@ -10,7 +10,6 @@ namespace PizzaBoxMVCClient.Models
         public Crust Crust { get; set; }
         public Size Size { get; set; }
         public List<Topping> Toppings { get; set; }
-
         public decimal Price { get; set; }
         public string Name { get; set; }
     }

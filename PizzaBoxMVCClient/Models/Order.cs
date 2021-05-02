@@ -8,14 +8,12 @@ namespace PizzaBoxMVCClient.Models
 {
   public class Order
   {
-       // public Store Store { get; set; }
-       
-       public List<Pizza> Pizzas { get; set; }
-        public string Summary { get; set; }
-        public User User { get; set; }
+   
+        public List<Pizza> Pizzas { get; set; }
+        public string Summary { get; set; }    
         public int OrderId { get; set; }
-       
-
-        public DateTime? Time { get; set; }
+        public DateTime? TimeReceived { get; set; }
+        public string StoreName { get; set; }
+        public int? UserId { get; set; }
     }
 }

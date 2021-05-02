@@ -2,11 +2,22 @@
 @model List<PizzaBoxMVCClient.Models.Order>
 
 @{
-    ViewData["Title"] = "Orders";
+    ViewData["Title"] = "Index";
 }
 
-@{
-}
+<h1>Order Index</h1>
+
+<div class="row pt-4">
+    <div class="col-6"><h2 class="text-primary">Make an Order</h2>
+        </div>
+<div class="col-6">Make an order
+    </div>
+</div>
+<br />
+
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -16,16 +27,14 @@
             <th>
                 Customer ID
             </th>
-            <th>
-                Store Name
-            </th>
+           
             <th>
                 # of Pizzas
             </th>
             <th>
                 Order Date
             </th>
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
@@ -36,18 +45,14 @@
                     @Html.DisplayFor(modelItem => item.Summary)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.User.UserId)
+                    @Html.DisplayFor(modelItem => item.UserId)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.User.userName)
-                </td>
+               
                 <td>
                     @Html.DisplayFor(modelItem => item.Pizzas.Count)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Time)
-                <td>
-                  
+                    @Html.DisplayFor(modelItem => item.TimeReceived)            
                 </td>
             </tr>
         }

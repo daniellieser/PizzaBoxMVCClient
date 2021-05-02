@@ -81,7 +81,6 @@ namespace PizzaBoxMVCClient
                 readTask.Wait();
                 var stores = readTask.Result;
                 return stores;
-
             }
             else
                 return null;
@@ -102,9 +101,6 @@ namespace PizzaBoxMVCClient
 
             Console.WriteLine("Reason phrase is" + response.Result.ReasonPhrase);
             Console.WriteLine("responsecode=" + response.Result.StatusCode);
-
-
-
 
             return result.IsSuccessStatusCode; 
         }

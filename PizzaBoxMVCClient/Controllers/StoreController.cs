@@ -10,10 +10,18 @@ namespace PizzaBoxMVCClient.Controllers
   public class StoreController : Controller
   {
     Client client = new Client();
+        
         public IActionResult Index() 
         {
             var stores = client.GetStores();
             return View(stores);
         }
-  }
+        
+        public IActionResult UserLogin([Bind("UserID")]string UserID)
+        {
+            System.Diagnostics.Debug.WriteLine(" user id: " + UserID);
+            return View(UserID);
+        }
+    }
+    
 }
