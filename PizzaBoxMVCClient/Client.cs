@@ -91,6 +91,9 @@ namespace PizzaBoxMVCClient
             
             using var client = new HttpClient();
             client.BaseAddress = new Uri(url);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS userid: " + order.UserId);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS storeID: " + order.StoreId);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS summary: " + order.Summary);
             var json = JsonConvert.SerializeObject(order);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var response = client.PostAsync("Order", data);

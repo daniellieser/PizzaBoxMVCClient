@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace PizzaBoxMVCClient.Models
 {
-    public class Order
-    {
-       // public string UserName { get; set; }
+  public class ClientOrder
+  {
+   
         public List<Pizza> Pizzas { get; set; }
-       // public User user { get; set; }
-        public string Summary { get; set; }
+        public string Summary { get; set; }    
         public int OrderId { get; set; }
         public DateTime? TimeReceived { get; set; }
-        public int? StoreId { get; set; }
+        public string StoreName { get; set; }
         public int? UserId { get; set; }
     }
 }

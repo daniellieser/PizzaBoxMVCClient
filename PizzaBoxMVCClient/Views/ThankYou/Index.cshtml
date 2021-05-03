@@ -1,0 +1,23 @@
+﻿
+@model PizzaBoxMVCClient.Models.Order
+<h1>Thank You For Your Order!</h1>
+
+
+<table style="width:90%">
+    <thead>
+        <tr>
+            <th>User ID: </th>
+            <th>Store :</th>
+            <th>Your Order Summary :</th>
+            <th>Time Received: </th>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayFor(model => model.UserId)  </td>
+            <td>@Html.DisplayFor(model => model.StoreId)  </td>
+            <td>@Html.DisplayFor(model => model.Summary)  </td>
+            <td>@Html.DisplayFor(model => model.TimeReceived)  </td>
+        </tr>
+  
+    </thead>
+</table>

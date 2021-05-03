@@ -19,18 +19,10 @@ namespace PizzaBoxMVCClient.Controllers
         [HttpPost]
         public IActionResult Create(Models.Order order)
         {
-            System.Diagnostics.Debug.WriteLine(" storename: " + order.StoreName);
-            System.Diagnostics.Debug.WriteLine(" userid: " + order.UserId);
+            System.Diagnostics.Debug.WriteLine("  userid: " + order.UserId);
+            System.Diagnostics.Debug.WriteLine(" storeID: " + order.StoreId);
             System.Diagnostics.Debug.WriteLine(" summary: " + order.Summary);
-
-            System.Diagnostics.Debug.WriteLine(" time received: " + order.TimeReceived);
-            System.Diagnostics.Debug.WriteLine(" orderID: " + order.OrderId);
-
-            if (!client.Save(order))
-            {
-                ModelState.AddModelError(string.Empty, "Server error. Sorry.");
-            }
-
+            client.Save(order);
             return View("Index");
         }
 
