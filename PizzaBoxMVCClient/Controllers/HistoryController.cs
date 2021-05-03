@@ -10,12 +10,17 @@ namespace PizzaBoxMVCClient.Controllers
   public class HistoryController : Controller
   {
     Client client = new Client();
-       
         public IActionResult Index(int id)
         {
             var history = client.GetHistory(id);
             return View(history);
         }
 
+        // public IActionResult GetCustOrders(string UserId) 
+        // {
+        //var history = client.GetHistory(int.Parse(UserId));
+        //return View(history);
+        // return View("Index", UserId);
+        // }
     }
 }

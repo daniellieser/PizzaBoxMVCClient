@@ -23,7 +23,8 @@ namespace PizzaBoxMVCClient.Controllers
             System.Diagnostics.Debug.WriteLine(" storeID: " + order.StoreId);
             System.Diagnostics.Debug.WriteLine(" summary: " + order.Summary);
             client.Save(order);
-            return View("Index");
+            return View("ThankYou", order);
+           
         }
 
     }

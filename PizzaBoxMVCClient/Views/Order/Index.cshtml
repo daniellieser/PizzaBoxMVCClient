@@ -8,13 +8,13 @@
     <form method="post" asp-action="Create" asp-controller="Order">
         <table style="width:90%">
             <tr>
-                <td>User</td>
+                <td>User ID</td>
                 <td>Store</td>
                 <td>Summary</td>
             </tr>
             <tr>
                 <td>
-                    <label for="userID">User ID</label>
+                   
                     <input type="text" id="userID" name="userID" />
                 </td>
                 <td>
@@ -27,14 +27,13 @@
                     </select>
                 </td>
                 <td>
-                    <label for="Summary">Special Requests</label>
                     <input type="text" id="Summary" name="Summary" />
                 </td>
             </tr>
 
         </table>
-
-        <input type="submit" value="Add to Cart" />
+        <br />
+        <input type="submit" value="Order" />
     </form>
 </div>
 

@@ -5,10 +5,10 @@
 }
 <p>Dear User, Kindly change URL to ".../History/Index/(yourUserID)"</p>
 <h1>Index</h1>
+<form method="get" asp-action="Index" asp-controller="History">
+    <input type="number" id="id"/>
+</form>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -25,7 +25,10 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@if ( Model != null) 
+{
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Summary)
@@ -42,6 +45,7 @@
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
+        }
 }
     </tbody>
 </table>
