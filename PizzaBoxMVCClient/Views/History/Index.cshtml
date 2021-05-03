@@ -5,7 +5,7 @@
 }
 <p>Dear User, Kindly change URL to ".../History/Index/(yourUserID)"</p>
 <h1>Index</h1>
-<form method="get" asp-action="Index" asp-controller="History">
+<form method="post" asp-action="Index" asp-controller="History">
     <input type="number" id="id"/>
 </form>
 
@@ -21,7 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.TimeReceived)
             </th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
@@ -39,11 +39,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TimeReceived)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+           
         </tr>
         }
 }

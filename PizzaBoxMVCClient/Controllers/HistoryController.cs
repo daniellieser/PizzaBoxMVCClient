@@ -13,7 +13,7 @@ namespace PizzaBoxMVCClient.Controllers
         public IActionResult Index(int id)
         {
             var history = client.GetHistory(id);
-            return View(history);
+            return View("Index", history);
         }
 
         // public IActionResult GetCustOrders(string UserId) 
