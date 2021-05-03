@@ -4,44 +4,10 @@
     ViewData["Title"] = "Index";
 }
 <p>Dear User, Kindly change URL to ".../History/Index/(yourUserID)"</p>
-<h1>Index</h1>
-<form method="post" asp-action="Index" asp-controller="History">
-    <input type="number" id="id"/>
+<h1>See Your Past Orders!</h1>
+<p>PizzaBox appreciates your past and future pizza orders. </p>
+<br />
+<form method="get" asp-action="GetCustOrders" asp-controller="History">
+    <input type="number" id="id" name="id"/>
 </form>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Summary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeReceived)
-            </th>
-            
-        </tr>
-    </thead>
-    <tbody>
-@if ( Model != null) 
-{
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Summary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeReceived)
-            </td>
-           
-        </tr>
-        }
-}
-    </tbody>
-</table>

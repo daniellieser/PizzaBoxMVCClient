@@ -15,12 +15,11 @@ namespace PizzaBoxMVCClient.Controllers
             var history = client.GetHistory(id);
             return View("Index", history);
         }
-
-        // public IActionResult GetCustOrders(string UserId) 
-        // {
-        //var history = client.GetHistory(int.Parse(UserId));
-        //return View(history);
-        // return View("Index", UserId);
-        // }
+      
+         public IActionResult GetCustOrders(int id) 
+         {
+        var history = client.GetHistory(id);
+        return View(history);
+         }
     }
 }
