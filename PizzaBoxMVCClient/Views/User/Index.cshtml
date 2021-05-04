@@ -7,14 +7,19 @@
 <p>We are happy for you to join the PizzaBox family!</p>
 <br />
 <form method="post" asp-action="CreateUser" asp-controller="User">
-    <label for="UserId">Choose ID #</label>
-    <input type="number" id="UserId" name="UserId" />
-    <br />
+    <div class="row">
+        <div class="col">
+            <label for="UserId">Choose ID #</label>
+            <input class="form-control" type="number" id="UserId" name="UserId" />
+            
+        </div><div class="col">
     <label for="userName">Name</label>
-    <input type="text" id="UserName" name="UserName" />
-    <br />
+    <input class="form-control" type="text" id="UserName" name="UserName" />
+</div><div class="col">
     <label for="UserPhone">Phone Number</label>
-    <input type="text" id="UserPhone" name="UserPhone" />
+    <input class="form-control" type="text" id="UserPhone" name="UserPhone" />
+</div>
+    </div>
     <br />
-    <input type="submit" value="Submit" />
+    <button type="submit" value="Submit" class="btn btn-primary">Create Account</button>
 </form>
