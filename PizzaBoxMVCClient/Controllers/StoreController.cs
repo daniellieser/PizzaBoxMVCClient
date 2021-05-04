@@ -16,6 +16,11 @@ namespace PizzaBoxMVCClient.Controllers
             var stores = client.GetStores();
             return View(stores);
         }
+        public IActionResult GetOrders() 
+        {
+            var orders = client.GetOrders();
+            return View(orders);
+        }
         
         public IActionResult UserLogin([Bind("UserID")]string UserID)
         {

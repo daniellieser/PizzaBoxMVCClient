@@ -63,7 +63,8 @@ namespace PizzaBoxMVCClient
             else
                 return null;
         }
-        public IEnumerable<Store> GetOrders()
+        
+        public IEnumerable<Order> GetOrders()
         {
             //  var allStores = context.Stores.Select(x => Mapper.Map(x));
             // public IEnumerable<Store> GetAllSuperHeroes()
@@ -77,15 +78,34 @@ namespace PizzaBoxMVCClient
 
             if (result.IsSuccessStatusCode)
             {
-                var readTask = result.Content.ReadAsAsync<Store[]>();
+                var readTask = result.Content.ReadAsAsync<Order[]>();
                 readTask.Wait();
-                var stores = readTask.Result;
-                return stores;
-            }
+                var orders = readTask.Result;
+                return orders;
+            } 
             else
                 return null;
         }
+        public bool CreateUser(Models.User user) 
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri(url);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS userid: " + user.UserId);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS phone: " + user.userPhone);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS username: " + user.userName);
+            var json = JsonConvert.SerializeObject(user);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = client.PostAsync("User", data);
 
+            response.Wait();
+
+            var result = response.Result;// this holds the output
+
+            Console.WriteLine("Reason phrase is" + response.Result.ReasonPhrase);
+            Console.WriteLine("responsecode=" + response.Result.StatusCode);
+
+            return result.IsSuccessStatusCode;
+        }
         public bool Save(Models.Order order)
         {
             

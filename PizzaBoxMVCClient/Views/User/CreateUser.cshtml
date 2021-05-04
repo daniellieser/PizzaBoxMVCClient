@@ -1,0 +1,22 @@
+﻿@model PizzaBoxMVCClient.Models.User
+@{
+    ViewData["Title"] = "CreateUser";
+}
+<h1>Welcome to PizzaBox!</h1>
+
+<table style="width:90%">
+    <thead>
+        <tr>
+            <th>User ID: </th>
+            <th>Name :</th>
+            <th>Phone #:</th>
+
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.UserId)  </td>
+            <td>@Html.DisplayFor(model => model.userName)  </td>
+            <td>@Html.DisplayFor(model => model.userPhone)  </td>
+
+        </tr>
+    </thead>
+</table>

@@ -1,14 +1,8 @@
 ﻿@model IEnumerable<PizzaBoxMVCClient.Models.Order>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetOrders";
 }
-
-<h1>See Your Past Orders!</h1>
-<h3>PizzaBox appreciates your past and future pizza orders. </h3>
-<form method="get" asp-action="GetCustOrders" asp-controller="History">
-    <input type="number" id="id" name="id" />
-</form>
 
 <table class="table">
     <thead>
