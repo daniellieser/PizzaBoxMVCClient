@@ -91,12 +91,12 @@ namespace PizzaBoxMVCClient
             using var client = new HttpClient();
             client.BaseAddress = new Uri(url);
             System.Diagnostics.Debug.WriteLine(" CLIENTCS userid: " + user.UserId);
-            System.Diagnostics.Debug.WriteLine(" CLIENTCS phone: " + user.userPhone);
-            System.Diagnostics.Debug.WriteLine(" CLIENTCS username: " + user.userName);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS phone: " + user.UserPhone);
+            System.Diagnostics.Debug.WriteLine(" CLIENTCS username: " + user.UserName);
             var json = JsonConvert.SerializeObject(user);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var response = client.PostAsync("User", data);
-
+            //User/Create
             response.Wait();
 
             var result = response.Result;// this holds the output

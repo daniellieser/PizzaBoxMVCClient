@@ -20,8 +20,11 @@ namespace PizzaBoxMVCClient.Controllers
         [HttpPost]
         public IActionResult CreateUser(Models.User user) 
         {
+            System.Diagnostics.Debug.WriteLine("  UserController: userid " + user.UserId);
+            System.Diagnostics.Debug.WriteLine(" UserController username: " + user.UserName);
+            System.Diagnostics.Debug.WriteLine(" UserController phone: " + user.UserPhone);
             client.CreateUser(user);
-            return View();
+            return View("Welcome", user);
         }
 
 

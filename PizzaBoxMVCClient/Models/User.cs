@@ -8,9 +8,9 @@ namespace PizzaBoxMVCClient.Models
 {
   public class User
   {
-    public string userName { get; set; }
+    public string UserName { get; set; }
     public int UserId { get; set; }
-    public string userPhone { get; set; }
+    public string UserPhone { get; set; }
         public User()
         {
             Orders = new HashSet<Order>();
